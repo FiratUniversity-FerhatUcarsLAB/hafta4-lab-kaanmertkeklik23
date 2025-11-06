@@ -1,60 +1,55 @@
-/*
- * Ad Soyad: [ADINIZI BURAYA YAZIN]
- * Ogrenci No: [OGRENCI NUMARANIZI BURAYA YAZIN]
- * Tarih: [TARIHI BURAYA YAZIN]
- * Aciklama: Gorev 1 - Ogrenci Bilgi Sistemi
- * 
- * Bu program kullanicidan ogrenci bilgilerini alir ve
- * duzenli bir formatta ekrana yazdirir.
- * Diğer java dosyalarının başında da bu örnek formattaki gibi kısa bilgi giriniz
- */
-
-import java.util.Scanner;
-
 public class OgrenciBilgi {
+
     public static void main(String[] args) {
-        // Scanner objesi olusturun
+        // 1. Tarayıcı (Scanner) sınıfı ile kullanıcıdan veri alma
+        Scanner tarayici = new Scanner(System.in);
+
+        // Değişken tanımlamalar ve kullanıcıdan veri alma
         
+        // a. Ad (String)
+        System.out.print("Öğrencinin Adını Girin: ");
+        String ad = tarayici.nextLine();
+
+        // b. Soyad (String)
+        System.out.print("Öğrencinin Soyadını Girin: ");
+        String soyad = tarayici.nextLine();
+
+        // c. Öğrenci Numarası (int)
+        System.out.print("Öğrenci Numarasını Girin (Örn: 12345): ");
+        int ogrenciNo = tarayici.nextInt();
+
+        // d. Yaş (int)
+        System.out.print("Yaşını Girin: ");
+        int yas = tarayici.nextInt();
+
+        // e. Genel Not Ortalaması - GPA (double)
+        System.out.print("Genel Not Ortalamasını (GPA) Girin (Örn: 3,45): ");
+        double gpa = tarayici.nextDouble();
         
-        // Degisken tanimlamalari
-        // String ad, soyad;
-        // int ogrenciNo, yas;
-        // double gpa;
+        // Tarayıcıyı kapatmak iyi bir alışkanlıktır.
+        tarayici.close();
+
+        // 2. Çıktı Formatı
         
-        
-        // Kullanicidan bilgileri alin
-        System.out.println("=== OGRENCI BILGI SISTEMI ===");
-        System.out.println();
-        
-        // Ad
-        
-        
-        // Soyad
-        
-        
-        // Ogrenci No
-        
-        
-        // Yas
-        
-        
-        // GPA
-        
-        
-        // Bilgileri ekrana yazdirin
+        // GPA'ya göre Durum belirleme (Basit bir kontrol)
+        String durum;
+        if (gpa >= 2.00) {
+            durum = "Başarılı Öğrenci";
+        } else {
+            durum = "Şartlı Geçiş/Başarısız";
+        }
+
+        // printf() ile formatlı ve düzenli çıktı
         System.out.println("\n=== OGRENCI BILGI SISTEMI ===");
         
-        // COZUMUNUZU BURAYA YAZIN
-        
-        
-        
-        
-        
-        
+        // %s: String, %d: int, %.2f: double (2 ondalık basamak hassasiyetinde)
+        System.out.printf("Ad Soyad: %s %s\n", ad, soyad);
+        System.out.printf("Öğrenci No: %d\n", ogrenciNo);
+        System.out.printf("Yaş: %d\n", yas);
+        System.out.printf("GPA: %.2f\n", gpa); // GPA'yı 2 ondalık basamakla gösteriyoruz
+        System.out.printf("Durum: %s\n", durum);
+        System.out.println("===============================");
+    }
+}
 
-        
-        
-        // Scanner'i kapatin (önemli pratik)
-        
-    }
 }
